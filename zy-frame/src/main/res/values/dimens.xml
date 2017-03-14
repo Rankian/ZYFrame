@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="ZYFrame_spacing_small">8dp</dimen>
+    <dimen name="ZYFrame_spacing">10dp</dimen>
+    <dimen name="ZYFrame_spacing_large">16dp</dimen>
+
+    <dimen name="ZYFrame_text_size_small">13sp</dimen>
+    <dimen name="ZYFrame_text_size">15sp</dimen>
+
+    <dimen name="ZYFrame_adapter_icon_size">24dp</dimen>
+    <dimen name="ZYFrame_progressbar_size">24dp</dimen>
+    <dimen name="ZYFrame_radius">6dp</dimen>
+
+</resources>

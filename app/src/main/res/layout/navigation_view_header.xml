@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/nav_header_bg"
+        android:scaleType="centerCrop"/>
+
+    <com.sanjie.zy.frame.view.CircleImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        android:src="@mipmap/zy_logo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="24dp"
+        android:padding="16dp"
+        android:text="SanJie"
+        android:textColor="@android:color/white"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="16dp"
+        android:text="动次打次 动次打次 动次打次"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"/>
+
+</FrameLayout>

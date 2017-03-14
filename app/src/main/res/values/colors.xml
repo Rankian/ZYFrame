@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00B7EE</color>
+    <color name="colorPrimaryDark">#00B7EE</color>
+    <color name="colorAccent">#E43080</color>
+
+    <!-- 主色调 -->
+    <color name="main_color">#00B7EE</color>
+
+    <!-- 基础颜色 -->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#333333</color>
+    <color name="pink">#E43080</color>
+    <color name="blue">#00B7EE</color>
+    <color name="blue_40">#75CBDC</color>
+    <color name="orange">#C63D00</color>
+    <color name="orange_bg">#EE6100</color>
+    <color name="red_80">#C31D42</color>
+    <color name="titleBarColor">#4CB59B</color>
+    <color name="gold">#DBB86A</color>
+
+    <!-- 灰度 越小越淡 越大越深-->
+    <color name="gray_10">#FCFCFC</color>
+    <color name="gray_20">#F0F0F0</color>
+    <color name="gray_30">#E0E0E0</color>
+    <color name="gray_40">#d0d0d0</color>
+    <color name="gray_50">#BEBEBE</color>
+    <color name="gray_60">#ADADAD</color>
+    <color name="gray_70">#9D9D9D</color>
+    <color name="gray_80">#8E8E8E</color>
+    <color name="gray_90">#7B7B7B</color>
+    <color name="gray_100">#6C6C6C</color>
+    <color name="gray_110">#5B5B5B</color>
+    <color name="gray_120">#4F4F4F</color>
+    <color name="gray_130">#3C3C3C</color>
+    <color name="gray_140">#272727</color>
+
+    <color name="main_gray">#BFBFBF</color>
+
+    <color name="container_background">#EBEBEB</color>
+
+    <!-- 透明度颜色 透明度7f=50% cc=80% 33=20%  translucent -->
+    <color name="translucent_100">#00000000</color> <!-- 全透明 -->
+    <color name="translucent_20_black">#33000000</color>
+    <color name="translucent_30_black">#4c000000</color>
+    <color name="translucent_50_black">#7f000000</color>
+    <color name="translucent_80_black">#cc000000</color>
+    <color name="translucent_20_white">#33ffffff</color>
+    <color name="translucent_50_white">#7fffffff</color>
+    <color name="translucent_80_white">#ccffffff</color>
+    <color name="translucent_20_pink">#33E43080</color>
+    <color name="translucent_80_pink">#99E43080</color>
+    <color name="translucent_60_pink">#80E43080</color>
+    <color name="translucent_20_blue">#330375dc</color>
+    <color name="translucent_40_blue">#660375dc</color>
+    <color name="translucent_60_blue">#990375dc</color>
+    <color name="translucent_80_blue">#cc0375dc</color>
+
+
+    <!-- A light Holo shade of blue -->
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <!-- A light Holo shade of gray -->
+    <color name="holo_gray_light">#33999999</color>
+    <!-- A light Holo shade of green -->
+    <color name="holo_green_light">#ff99cc00</color>
+    <!-- A light Holo shade of red -->
+    <color name="holo_red_light">#ffff4444</color>
+    <!-- A dark Holo shade of blue -->
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <!-- A dark Holo shade of green -->
+    <color name="holo_green_dark">#ff669900</color>
+    <!-- A dark Holo shade of red -->
+    <color name="holo_red_dark">#ffcc0000</color>
+    <!-- A Holo shade of purple -->
+    <color name="holo_purple">#ffaa66cc</color>
+    <!-- A light Holo shade of orange -->
+    <color name="holo_orange_light">#ffffbb33</color>
+    <!-- A dark Holo shade of orange -->
+    <color name="holo_orange_dark">#ffff8800</color>
+    <!-- A really bright Holo shade of blue -->
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <!-- A really bright Holo shade of gray -->
+    <color name="holo_gray_bright">#33CCCCCC</color>
+
+    <color name="orange_little">#EC7F49</color>
+
+    <color name="orange_button">#FD990F</color>
+
+    <color name="orange_80">#E14906</color>
+
+    <color name="orange_60">#ECAE59</color>
+
+    <color name="orange_40">#F8DD75</color>
+
+    <color name="tab_color">#F47645</color>
+
+
+    <color name="alpha_05_white">#0DFFFFFF</color>
+    <color name="alpha_10_white">#1AFFFFFF</color>
+    <color name="alpha_15_white">#26FFFFFF</color>
+    <color name="alpha_20_white">#33FFFFFF</color>
+    <color name="alpha_25_white">#40FFFFFF</color>
+    <color name="alpha_30_white">#4DFFFFFF</color>
+    <color name="alpha_35_white">#59FFFFFF</color>
+    <color name="alpha_40_white">#66FFFFFF</color>
+    <color name="alpha_45_white">#73FFFFFF</color>
+    <color name="alpha_50_white">#80FFFFFF</color>
+    <color name="alpha_55_white">#8CFFFFFF</color>
+    <color name="alpha_60_white">#99FFFFFF</color>
+    <color name="alpha_65_white">#A6FFFFFF</color>
+    <color name="alpha_70_white">#B3FFFFFF</color>
+    <color name="alpha_75_white">#BFFFFFFF</color>
+    <color name="alpha_80_white">#CCFFFFFF</color>
+    <color name="alpha_85_white">#D9FFFFFF</color>
+    <color name="alpha_90_white">#E6FFFFFF</color>
+    <color name="alpha_95_white">#F2FFFFFF</color>
+
+    <color name="alpha_05_black">#0D000000</color>
+    <color name="alpha_10_black">#1A000000</color>
+    <color name="alpha_15_black">#26000000</color>
+    <color name="alpha_20_black">#33000000</color>
+    <color name="alpha_25_black">#40000000</color>
+    <color name="alpha_30_black">#4D000000</color>
+    <color name="alpha_35_black">#59000000</color>
+    <color name="alpha_40_black">#66000000</color>
+    <color name="alpha_45_black">#73000000</color>
+    <color name="alpha_50_black">#80000000</color>
+    <color name="alpha_55_black">#8C000000</color>
+    <color name="alpha_60_black">#99000000</color>
+    <color name="alpha_65_black">#A6000000</color>
+    <color name="alpha_70_black">#B3000000</color>
+    <color name="alpha_75_black">#BF000000</color>
+    <color name="alpha_80_black">#CC000000</color>
+    <color name="alpha_85_black">#D9000000</color>
+    <color name="alpha_90_black">#E6000000</color>
+    <color name="alpha_95_black">#F2000000</color>
+
+
+</resources>

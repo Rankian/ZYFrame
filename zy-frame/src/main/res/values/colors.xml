@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ZYFrame_darker_gray">#aaaaaa</color>
+    <color name="ZYFrame_white">#ffffff</color>
+    <color name="ZYFrame_text_gray">#8a8a8a</color>
+
+    <color name="ZYFrame_loading_dialog_bg">@color/ZYFrame_white</color>
+    <color name="ZYFrame_loading_dialog_message">#595959</color>
+
+</resources>

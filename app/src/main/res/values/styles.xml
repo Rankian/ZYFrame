@@ -1,0 +1,65 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppMainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+    <!-- 适用于开启滑动返回功能的 Activity -->
+    <style name="AppTheme.Transparent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="LaunchActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:paddingLeft">@dimen/layout_small_padding</item>
+        <item name="android:paddingRight">@dimen/layout_small_padding</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!--侧滑菜单项-->
+    <style name="menuTextStyle">
+        <item name="android:textColor">@color/gold</item>
+        <item name="android:textSize">@dimen/font_20_size</item>
+        <item name="android:paddingLeft">@dimen/layout_big_padding</item>
+        <item name="android:paddingTop">@dimen/layout_middle_padding</item>
+        <item name="android:paddingBottom">@dimen/layout_middle_padding</item>
+        <item name="android:paddingRight">@dimen/layout_normal_padding</item>
+        <item name="android:drawableLeft">@mipmap/heart</item>
+        <item name="android:drawablePadding">@dimen/layout_normal_padding</item>
+    </style>
+
+    <style name="BottomRadioButtonStyle">
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/font_14_size</item>
+        <item name="android:drawablePadding">@dimen/layout_small_padding</item>
+        <item name="android:textColor">@drawable/selector_bottom_radio_button</item>
+    </style>
+
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loading_no_network"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loading_no_network_text"
+        android:layout_margin="@dimen/ZYFrame_spacing"
+        android:textColor="@color/ZYFrame_text_gray"
+        android:textSize="@dimen/ZYFrame_text_size" />
+    <TextView
+        android:id="@id/loading_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loading_retry_text"
+        android:textColor="@color/ZYFrame_text_gray"
+        android:textSize="@dimen/ZYFrame_text_size"
+        android:background="@drawable/loading_btn_selector"
+        style="@style/loading_padding_style" />
+</LinearLayout>

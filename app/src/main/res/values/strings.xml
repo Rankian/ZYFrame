@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">姿谊</string>
+
+    <string name="navigation_drawer_open">navigation_drawer_open</string>
+    <string name="navigation_drawer_close">navigation_drawer_close</string>
+
+    <string name="transition_photos">transition_animation_news_photos</string>
+    <string name="title">标题</string>
+    <string name="title_bluetooth">蓝牙操作</string>
+    <string name="title_photo_detail">图片详情</string>
+</resources>

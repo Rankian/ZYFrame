@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sanBtn"
+            android:icon="@mipmap/heart"
+            android:title="三" />
+        <item
+            android:id="@+id/jieBtn"
+            android:icon="@mipmap/heart"
+            android:title="杰" />
+        <item
+            android:id="@+id/lovewBtn"
+            android:icon="@mipmap/heart"
+            android:title="爱" />
+        <item
+            android:id="@+id/ziBtn"
+            android:icon="@mipmap/heart"
+            android:title="姿" />
+        <item
+            android:id="@+id/yiBtn"
+            android:icon="@mipmap/heart"
+            android:title="谊" />
+    </group>
+
+    <item android:title="帮助">
+        <menu>
+            <item
+                android:icon="@mipmap/share_icon"
+                android:title="分享" />
+            <item
+                android:id="@+id/scanner_bluetooth"
+                android:icon="@mipmap/scanner_icon"
+                android:title="扫描" />
+            <item
+                android:id="@+id/add_btn"
+                android:icon="@mipmap/add_icon"
+                android:title="添加" />
+        </menu>
+    </item>
+
+</menu>

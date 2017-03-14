@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    style="@style/Toolbar">
+
+    <TextView
+        android:id="@+id/tv_titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="@string/title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_18_size" />
+
+    <ImageView
+        android:id="@+id/right_Btn"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/more_icon"
+        android:scaleType="center"
+        android:visibility="gone"
+        android:padding="@dimen/layout_small_padding"
+        android:layout_gravity="center_vertical|right"/>
+
+</android.support.v7.widget.Toolbar>
