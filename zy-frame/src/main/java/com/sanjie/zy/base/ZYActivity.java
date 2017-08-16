@@ -18,8 +18,8 @@ public abstract class ZYActivity extends AppCompatActivity implements ICallBack 
         if(getLayoutId() > 0){
             setContentView(getLayoutId());
         }
-        initView();
         initData(savedInstanceState);
+        initView();
         super.onCreate(savedInstanceState);
     }
 

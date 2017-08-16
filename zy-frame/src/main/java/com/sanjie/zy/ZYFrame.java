@@ -8,9 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.util.DisplayMetrics;
-import android.widget.ImageView;
 
-import com.sanjie.zy.utils.ZYDensityUtils;
+import com.sanjie.zy.utils.ZYDisplayUtils;
 import com.sanjie.zy.utils.ZYOutdatedUtils;
 import com.sanjie.zy.utils.log.ZYLog;
 import com.sanjie.zy.utils.log.ZYLogConfig;
@@ -35,8 +34,8 @@ public class ZYFrame {
 
     public static void init(Context context) {
         ZYFrame.context = context;
-        screenHeight = ZYDensityUtils.getScreenHeight();
-        screenWidth = ZYDensityUtils.getScreenWidth();
+        screenHeight = ZYDisplayUtils.getScreenHeight();
+        screenWidth = ZYDisplayUtils.getScreenWidth();
     }
 
 

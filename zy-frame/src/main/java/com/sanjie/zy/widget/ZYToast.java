@@ -171,7 +171,7 @@ public class ZYToast {
         ImageView toastIcon = (ImageView) toastLayout.findViewById(R.id.toast_icon);
         TextView toastText = (TextView) toastLayout.findViewById(R.id.toast_text);
 
-        Drawable drawableFrame = ZYOutdatedUtils.getDrawable(R.drawable.toast_frame);
+        Drawable drawableFrame = ZYOutdatedUtils.getDrawable(R.drawable.shape_toast_background);
         drawableFrame.setColorFilter(new PorterDuffColorFilter(tintColor, PorterDuff.Mode.SRC_IN));
         ZYOutdatedUtils.setBackground(toastLayout, drawableFrame);
 

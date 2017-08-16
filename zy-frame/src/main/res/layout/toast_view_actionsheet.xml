@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp" >
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/shape_actionsheet_label"
+        android:minHeight="45dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="医院选择"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/gray_60"
+        android:textSize="16sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/gray_30"/>
+
+    <ScrollView
+        android:id="@+id/sLayout_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none"
+         >
+
+        <LinearLayout
+            android:id="@+id/lLayout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/txt_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="取消"
+        android:background="@drawable/selector_actionsheet_last"
+        android:textColor="@color/gray_60"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+</LinearLayout>

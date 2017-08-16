@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ZYFrame_darker_gray">#aaaaaa</color>
+    <color name="ZYFrame_loading_dialog_bg">@color/ZYFrame_white</color>
+    <color name="ZYFrame_loading_dialog_message">#595959</color>
+    <color name="ZYFrame_text_gray">#8a8a8a</color>
+    <color name="ZYFrame_white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="blue">#00B7EE</color>
+    <color name="blue_40">#75CBDC</color>
+    <color name="gray">#333333</color>
+    <color name="gray_10">#FCFCFC</color>
+    <color name="gray_100">#6C6C6C</color>
+    <color name="gray_110">#5B5B5B</color>
+    <color name="gray_120">#4F4F4F</color>
+    <color name="gray_130">#3C3C3C</color>
+    <color name="gray_140">#272727</color>
+    <color name="gray_20">#F0F0F0</color>
+    <color name="gray_30">#E0E0E0</color>
+    <color name="gray_40">#d0d0d0</color>
+    <color name="gray_50">#BEBEBE</color>
+    <color name="gray_60">#ADADAD</color>
+    <color name="gray_70">#9D9D9D</color>
+    <color name="gray_80">#8E8E8E</color>
+    <color name="gray_90">#7B7B7B</color>
+    <color name="green">#00E266</color>
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="holo_gray_bright">#33CCCCCC</color>
+    <color name="holo_gray_light">#33999999</color>
+    <color name="holo_green_dark">#ff669900</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_orange_dark">#ffff8800</color>
+    <color name="holo_orange_light">#ffffbb33</color>
+    <color name="holo_purple">#ffaa66cc</color>
+    <color name="holo_red_dark">#ffcc0000</color>
+    <color name="holo_red_light">#ffff4444</color>
+    <color name="orange">#C63D00</color>
+    <color name="orange_40">#F8DD75</color>
+    <color name="orange_60">#ECAE59</color>
+    <color name="orange_80">#E14906</color>
+    <color name="orange_bg">#EE6100</color>
+    <color name="orange_button">#FD990F</color>
+    <color name="orange_little">#EC7F49</color>
+    <color name="picker_black">#000</color>
+    <color name="picker_colorAccent">#FF4081</color>
+    <color name="picker_colorPrimary">#000000</color>
+    <color name="picker_colorPrimaryAlpha">#44000000</color>
+    <color name="picker_colorPrimaryDark">#ff212121</color>
+    <color name="picker_width">#FFFFFF</color>
+    <color name="pink">#E43080</color>
+    <color name="red_80">#C31D42</color>
+    <color name="tab_color">#F47645</color>
+    <color name="titleBarColor">#4CB59B</color>
+    <color name="translucent_100">#00000000</color>
+    <color name="translucent_20_black">#33000000</color>
+    <color name="translucent_20_blue">#330375dc</color>
+    <color name="translucent_20_pink">#33E43080</color>
+    <color name="translucent_20_white">#33ffffff</color>
+    <color name="translucent_30_black">#4c000000</color>
+    <color name="translucent_40_blue">#660375dc</color>
+    <color name="translucent_50_black">#7f000000</color>
+    <color name="translucent_50_white">#7fffffff</color>
+    <color name="translucent_60_blue">#990375dc</color>
+    <color name="translucent_60_pink">#80E43080</color>
+    <color name="translucent_80_black">#cc000000</color>
+    <color name="translucent_80_blue">#cc0375dc</color>
+    <color name="translucent_80_main_blue">#6600b7ee</color>
+    <color name="translucent_80_pink">#99E43080</color>
+    <color name="translucent_80_white">#ccffffff</color>
+    <color name="white">#ffffff</color>
+    <declare-styleable name="ArcHeader"><attr format="dimension" name="arc_height"/><attr format="enum" name="arc_cropDirection">
+            <enum name="cropInside" value="0"/>
+            <enum name="cropOutside" value="1"/>
+        </attr></declare-styleable>
+    <declare-styleable name="BubbleView"><attr format="dimension" name="arrowWidth"/><attr format="dimension" name="angle"/><attr format="dimension" name="arrowHeight"/><attr format="dimension" name="arrowPosition"/><attr format="color" name="bubbleColor"/><attr format="enum" name="arrowLocation">
+            <enum name="left" value="0x00"/>
+            <enum name="right" value="0x01"/>
+            <enum name="top" value="0x02"/>
+            <enum name="bottom" value="0x03"/>
+        </attr></declare-styleable>
+    <declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/></declare-styleable>
+    <declare-styleable name="Snack"><attr format="reference" name="snackIcon"/><attr format="color" name="snackBackgroundColor"/><attr format="string" name="snackTitle"/><attr format="string" name="snackText"/></declare-styleable>
+    <declare-styleable name="ZYBanner"><attr format="integer" name="delay_time"/><attr format="integer" name="scroll_time"/><attr format="boolean" name="is_auto_play"/><attr format="color|reference" name="title_background"/><attr format="color" name="title_textcolor"/><attr format="dimension" name="title_textsize"/><attr format="dimension" name="title_height"/><attr format="dimension" name="indicator_width"/><attr format="dimension" name="indicator_height"/><attr format="dimension" name="indicator_margin"/><attr format="reference" name="indicator_drawable_selected"/><attr format="reference" name="indicator_drawable_unselected"/><attr format="enum" name="image_scale_type">
+            <enum name="center" value="0"/>
+            <enum name="center_crop" value="1"/>
+            <enum name="center_inside" value="2"/>
+            <enum name="fit_center" value="3"/>
+            <enum name="fit_end" value="4"/>
+            <enum name="fit_start" value="5"/>
+            <enum name="fit_xy" value="6"/>
+            <enum name="matrix" value="7"/>
+        </attr></declare-styleable>
+    <declare-styleable name="ZYCompoundIconTextView"><attr format="integer" name="cit_drawableLeft"/><attr format="integer" name="cit_drawableTop"/><attr format="integer" name="cit_drawableRight"/><attr format="integer" name="cit_drawableBottom"/><attr format="integer" name="cit_drawableStart"/><attr format="integer" name="cit_drawableEnd"/><attr format="dimension" name="cit_iconWidth"/><attr format="dimension" name="cit_iconHeight"/><attr format="color" name="cit_iconColor"/></declare-styleable>
+    <declare-styleable name="ZYDiagonalLayout"><attr format="integer" name="diagonal_angle"/><attr format="boolean" name="diagonal_handleMargins"/><attr format="enum" name="diagonal_position">
+            <enum name="left" value="1"/>
+            <enum name="right" value="2"/>
+            <enum name="bottom" value="4"/>
+            <enum name="top" value="8"/>
+        </attr><attr format="enum" name="diagonal_direction">
+            <enum name="left" value="1"/>
+            <enum name="right" value="2"/>
+        </attr></declare-styleable>
+    <declare-styleable name="ZYLoadingView"><attr format="reference" name="loadingView"/><attr format="reference" name="errorView"/><attr format="reference" name="emptyView"/><attr format="reference" name="noNetworkView"/></declare-styleable>
+    <declare-styleable name="ZYMarqueeViewStyle"><attr format="integer|reference" name="mvInterval"/><attr format="integer|reference" name="mvAnimDuration"/><attr format="dimension|reference" name="mvTextSize"/><attr format="color|reference" name="mvTextColor"/><attr format="boolean" name="mvSingleLine"/><attr name="mvGravity">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr></declare-styleable>
+    <declare-styleable name="ZYPageIndicatorView"><attr name="orientation">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr><attr format="reference" name="viewPager"/><attr format="integer" name="select"/><attr format="integer" name="count"/><attr format="boolean" name="dynamicCount"/><attr format="dimension" name="radius"/><attr format="dimension" name="padding"/><attr format="dimension" name="strokeWidth"/><attr format="float" name="scaleFactor"/><attr format="boolean" name="autoVisibility"/><attr format="color" name="unselectedColor"/><attr format="color" name="selectedColor"/><attr format="boolean" name="interactiveAnimation"/><attr format="integer" name="animationDuration"/><attr name="animationType">
+            <enum name="none" value="0"/>
+            <enum name="color" value="1"/>
+            <enum name="scale" value="2"/>
+            <enum name="worm" value="3"/>
+            <enum name="slide" value="4"/>
+            <enum name="fill" value="5"/>
+            <enum name="thinWorm" value="6"/>
+            <enum name="drop" value="7"/>
+            <enum name="swap" value="8"/>
+        </attr><attr name="mode">
+            <enum name="on" value="0"/>
+            <enum name="off" value="1"/>
+            <enum name="auto" value="2"/>
+        </attr></declare-styleable>
+    <declare-styleable name="ZYRoundButton"><attr format="color" name="btnSolidColor"/><attr format="color" name="btnStrokeColor"/><attr format="dimension" name="btnStrokeWidth"/><attr format="dimension" name="btnStrokeDashWidth"/><attr format="dimension" name="btnStrokeDashGap"/><attr format="dimension" name="btnCornerRadius">
+            <enum name="stadium" value="-1"/>
+        </attr><attr format="float" name="btnPressedRatio"/></declare-styleable>
+    <declare-styleable name="ZYSnackBar"><attr format="reference" name="snackStyle"/></declare-styleable>
+    <dimen name="ZYFrame_adapter_icon_size">24dp</dimen>
+    <dimen name="ZYFrame_progressbar_size">24dp</dimen>
+    <dimen name="ZYFrame_radius">6dp</dimen>
+    <dimen name="ZYFrame_spacing">10dp</dimen>
+    <dimen name="ZYFrame_spacing_large">16dp</dimen>
+    <dimen name="ZYFrame_spacing_small">8dp</dimen>
+    <dimen name="ZYFrame_text_size">15sp</dimen>
+    <dimen name="ZYFrame_text_size_small">13sp</dimen>
+    <dimen name="snack_activity_horizontal_margin">18dp</dimen>
+    <dimen name="snack_activity_vertical_margin">16dp</dimen>
+    <dimen name="snack_icn_size">38dp</dimen>
+    <dimen name="snack_max_height">84dp</dimen>
+    <dimen name="snack_min_height">64dp</dimen>
+    <dimen name="snack_padding">26dp</dimen>
+    <dimen name="snack_padding_default">16dp</dimen>
+    <dimen name="snack_padding_small">4dp</dimen>
+    <dimen name="snack_text_medium">18sp</dimen>
+    <dimen name="snack_text_small">14sp</dimen>
+    <item name="loading_retry" type="id"/>
+    <item name="statusbar_fake_status_bar_view" type="id"/>
+    <item name="statusbar_translucent_view" type="id"/>
+    <string name="all_phone_album">全部相册</string>
+    <string name="app_name">ZYFrame</string>
+    <string name="loading_dialog_message">努力加载中...</string>
+    <string name="loading_empty_text">暂无数据</string>
+    <string name="loading_error_text">加载失败，请稍后再试</string>
+    <string name="loading_no_network_text">无网络连接，请检查你的网络</string>
+    <string name="loading_retry_text">点击重试</string>
+    <string name="max_select">最多选择%s张图片</string>
+    <string name="msg.no_snack_showing">No Snack Showing</string>
+    <string name="msg.snack_cleared">Snack Cleared</string>
+    <string name="select_confirm">确定</string>
+    <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/actionsheet_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
+    </style>
+    <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item>
+    </style>
+    <style name="BottomDialog" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="BottomDialog.Animation" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/translate_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/translate_dialog_out</item>
+    </style>
+    <style name="RxPicker.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/picker_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/picker_colorPrimaryDark</item>
+        <item name="colorAccent">@color/picker_colorAccent</item>
+    </style>
+    <style name="RxPicker.AppTheme.NoActionBar" parent="RxPicker.AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+    <style name="RxPicker.PopupAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/picker_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/picker_fade_out</item>
+    </style>
+    <style name="RxPicker.ToolbarTheme" parent="RxPicker.AppTheme.NoActionBar">
+        <item name="titleTextColor">@color/picker_width</item>
+        <item name="android:textColorSecondary">@color/picker_width</item>
+        <item name="android:textColor">@color/picker_width</item>
+        <item name="android:background">@color/picker_colorPrimaryDark</item>
+    </style>
+    <style name="SnackStyle" parent="@android:style/Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/snack_min_height</item>
+        <item name="android:maxHeight">@dimen/snack_max_height</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">top</item>
+        <item name="android:paddingTop">@dimen/snack_padding</item>
+        <item name="android:paddingBottom">@dimen/snack_padding</item>
+    </style>
+    <style name="SnackStyle.TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/snack_text_small</item>
+    </style>
+    <style name="SnackStyle.TextAppearance.Title">
+        le name="AlertStyle.TextAppearance.Title">
+        <item name="android:textSize">@dimen/snack_text_medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SnackTheme" parent="Base.Theme.AppCompat">
+        <item name="snackStyle">@style/SnackStyle</item>
+    </style>
+    <style name="Widget.SeekBar.Media" parent="@android:style/Widget.SeekBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+        <item name="android:thumb">@drawable/icon_thumb</item>
+
+        <item name="android:maxHeight">2.5dp</item>
+        <item name="android:minHeight">2.5dp</item>
+        <item name="android:progressDrawable">@drawable/video_progressbar</item>
+        <item name="android:thumbOffset">5dp</item>
+    </style>
+    <style name="loading_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+    <style name="loading_padding_style">
+        <item name="android:paddingTop">@dimen/ZYFrame_spacing</item>
+        <item name="android:paddingBottom">@dimen/ZYFrame_spacing</item>
+        <item name="android:paddingLeft">@dimen/ZYFrame_spacing_large</item>
+        <item name="android:paddingRight">@dimen/ZYFrame_spacing_large</item>
+    </style>
+</resources>

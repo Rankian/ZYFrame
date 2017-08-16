@@ -1,5 +1,7 @@
 package com.sanjie.zy.utils.log;
 
+import org.json.JSONObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -49,6 +51,10 @@ public final class ZYLog {
 
     public static void json(String json) {
         printer.json(json);
+    }
+
+    public static void json(JSONObject object){
+        json(object.toString());
     }
 
     public static void xml(String xml) {

@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.sanjie.zy.R;
 
 import java.util.List;
@@ -18,10 +17,10 @@ import java.util.List;
 /**
  * Created by LangSanJie on 2017/3/7.
  */
-public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T,ZYViewHolder> {
+public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T, ZYViewHolder> {
     // 用来存放底部和头部View的集合  比Map要高效一些
-    private SparseArray<View> mHeaderViews= new SparseArray<>();
-    private SparseArray<View> mFooterViews= new SparseArray<>();
+    private SparseArray<View> mHeaderViews = new SparseArray<>();
+    private SparseArray<View> mFooterViews = new SparseArray<>();
     private static int TYPE_HEADER = 0x100;
     private static int TYPE_FOOTER = 0x200;
     private static final int TYPE_LOAD_FAILED = 0x1;
@@ -41,9 +40,10 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
     private OnItemClickListener onItemClickListener;
     private OnItemLongClickListener onItemLongClickListener;
 
-    public ZYRecyclerViewAdapter(@NonNull RecyclerView mRecyclerView, List<T> dataLists){
-        this(mRecyclerView,dataLists, -1);
+    public ZYRecyclerViewAdapter(@NonNull RecyclerView mRecyclerView, List<T> dataLists) {
+        this(mRecyclerView, dataLists, -1);
     }
+
     public ZYRecyclerViewAdapter(@NonNull RecyclerView mRecyclerView, List<T> dataLists, @LayoutRes int layoutId) {
         this.mRecyclerView = mRecyclerView;
         this.dataLists = dataLists;
@@ -63,7 +63,7 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
             position = position - getHeaderCount() - getDataCount();
             return mFooterViews.keyAt(position);
         }
-        position= position - getHeaderCount();
+        position = position - getHeaderCount();
         return getItemLayoutResId(getItem(position), position);
     }
 
@@ -77,15 +77,15 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
             return new ZYViewHolder(mFooterViews.get(viewType));
         }
         if (viewType == TYPE_NO_MORE) {
-            mNoMoreView=inflater.inflate(R.layout.adapter_no_more, mRecyclerView, false);
+            mNoMoreView = inflater.inflate(R.layout.adapter_no_more, mRecyclerView, false);
             return new ZYViewHolder(mNoMoreView);
         }
         if (viewType == TYPE_LOAD_MORE) {
-            mLoadMoreView=inflater.inflate(R.layout.adapter_loading, mRecyclerView, false);
+            mLoadMoreView = inflater.inflate(R.layout.adapter_loading, mRecyclerView, false);
             return new ZYViewHolder(mLoadMoreView);
         }
         if (viewType == TYPE_LOAD_FAILED) {
-            mLoadMoreFailedView=inflater.inflate(R.layout.adapter_loading_failed, mRecyclerView, false);
+            mLoadMoreFailedView = inflater.inflate(R.layout.adapter_loading_failed, mRecyclerView, false);
             return new ZYViewHolder(mLoadMoreFailedView);
         }
         return new ZYViewHolder(inflater.inflate(viewType, parent, false));
@@ -105,7 +105,7 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
             });
             return;
         }
-        if (holder.getItemViewType()==TYPE_LOAD_MORE) {
+        if (holder.getItemViewType() == TYPE_LOAD_MORE) {
             if (onLoadMoreListener != null && isHaveStatesView) {
                 if (!isLoadError) {
                     onLoadMoreListener.onLoadMore();
@@ -113,7 +113,7 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
             }
             return;
         }
-        if (isFooterPosition(position)||isHeaderPosition(position)) return;
+        if (isFooterPosition(position) || isHeaderPosition(position)) return;
 
         final int finalPosition = position - getHeaderCount();
 
@@ -138,21 +138,24 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
 
         bindData(holder, getItem(finalPosition), finalPosition);
     }
+
     protected abstract void bindData(ZYViewHolder holder, T data, int position);
-    public int getItemLayoutResId(T data, int position){
+
+    public int getItemLayoutResId(T data, int position) {
         return layoutId;
     }
+
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
-        if(manager instanceof GridLayoutManager){   // 布局是GridLayoutManager所管理
+        if (manager instanceof GridLayoutManager) {   // 布局是GridLayoutManager所管理
             final GridLayoutManager gridLayoutManager = (GridLayoutManager) manager;
             gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
                 @Override
                 public int getSpanSize(int position) {
                     // 如果是Header、Footer的对象则占据spanCount的位置，否则就只占用1个位置
-                    return (isHeaderPosition(position)||isFooterPosition(position)) ? gridLayoutManager.getSpanCount() : 1;
+                    return (isHeaderPosition(position) || isFooterPosition(position)) ? gridLayoutManager.getSpanCount() : 1;
                 }
             });
         }
@@ -163,7 +166,7 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
     public void onViewAttachedToWindow(ZYViewHolder holder) {
         super.onViewAttachedToWindow(holder);
         int position = holder.getLayoutPosition();
-        if (isFooterPosition(position)||isHeaderPosition(position)) {
+        if (isFooterPosition(position) || isHeaderPosition(position)) {
             ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
             if (lp != null && lp instanceof StaggeredGridLayoutManager.LayoutParams) {
                 StaggeredGridLayoutManager.LayoutParams p = (StaggeredGridLayoutManager.LayoutParams) lp;
@@ -174,7 +177,7 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
 
     @Override
     public int getItemCount() {
-        return getDataCount()+ getHeaderCount() + getFooterCount()+ (isHaveStatesView ? 1 : 0);
+        return getDataCount() + getHeaderCount() + getFooterCount() + (isHaveStatesView ? 1 : 0);
     }
 
     public int getDataCount() {
@@ -229,9 +232,11 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
     private boolean isFooterPosition(int position) {
         return position >= (getHeaderCount() + getDataCount());
     }
+
     private boolean isLoadPosition(int position) {
-        return position == getItemCount() -1 && isHaveStatesView;
+        return position == getItemCount() - 1 && isHaveStatesView;
     }
+
     private boolean isHeaderPosition(int position) {
         return position < getHeaderCount();
     }
@@ -270,6 +275,7 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
         this.onLoadMoreListener = onLoadMoreListener;
         return this;
     }
+
     public ZYRecyclerViewAdapter<T> setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
         return this;
@@ -279,10 +285,13 @@ public abstract class ZYRecyclerViewAdapter<T> extends BaseRecyclerViewAdapter<T
         this.onItemLongClickListener = onItemLongClickListener;
         return this;
     }
+
     public interface OnLoadMoreListener {
         void onRetry();
+
         void onLoadMore();
     }
+
     public interface OnItemClickListener {
         void onItemClick(View v, int position);
     }

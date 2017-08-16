@@ -1,5 +1,7 @@
 package com.sanjie.zy.utils;
 
+import java.util.Locale;
+
 /**
  * 用来计算显示的时间是多久之前的！
  */
@@ -12,7 +14,7 @@ public class ZYFormatTimeUtils {
      * @param millis  开始时间戳
      * @return
      */
-    public String getTimeSpanByNow1(long millis) {
+    public static String getTimeSpanByNow1(long millis) {
         long now = System.currentTimeMillis();
         long span = now - millis;
         if (span < 1000) {
@@ -73,5 +75,18 @@ public class ZYFormatTimeUtils {
         }
     }
 
+    public static String stringForTime(int timeMs) {
+        int totalSeconds = timeMs / 1000;
+
+        int seconds = totalSeconds % 60;
+        int minutes = (totalSeconds / 60) % 60;
+        int hours   = totalSeconds / 3600;
+
+        if (hours > 0) {
+            return String.format(Locale.getDefault(), "%d:%02d:%02d", hours, minutes, seconds);
+        } else {
+            return String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        }
+    }
 
 }
