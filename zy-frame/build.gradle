@@ -1,15 +1,18 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.neenbedankt.android-apt'
+//配置插件
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 14
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 17090901
+        versionName "1.3.8"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -52,18 +55,112 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     //滑动返回
     compile 'cn.bingoogolapple:bga-swipebacklayout:1.0.2@aar'
-    //状态栏控制
-    //    compile 'com.jaeger.statusbaruitl:library:1.3.1'
-    //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
-    //3.5.0：请务必查看下面注释[1]
-    compile 'cn.bmob.android:bmob-sdk:3.5.0'
-    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
-    compile 'cn.bmob.android:http-legacy:1.0'
-    compile 'com.android.support:cardview-v7:25.1.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.2'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     compile 'com.jakewharton.rxbinding:rxbinding:1.0.0'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    compile 'com.google.zxing:core:3.3.0'
+}
+
+version = "1.3.8"
+def siteUrl = 'https://github.com/Rankian/ZYFrame'//项目主页
+def gitUrl = 'https://github.com/Rankian/ZYFrame'//git仓库地址
+
+group = "com.sanjie.zy"//包名
+
+install{
+    repositories.mavenInstaller{
+        pom{
+            project{
+                packaging 'aar'
+                name 'ZY-Frame'   //项目描述
+                url siteUrl
+                //打开开源协议 一般都是Apache License2.0
+                licenses{
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers{
+                    developer{
+                        id 'SanJie'//公司id
+                        name 'rankian'//用户名
+                        email 'langsanjie@outlook.com'
+                    }
+                }
+                //SCM
+                scm{
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+// 生成jar包的task
+task sourcesJar(type: Jar){
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+// 生成javaDoc的jar
+task javadoc(type: Javadoc) {
+    options.encoding = "UTF-8"
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+//下面设置编码格式，重点注意，如果不设置可能会在gradlew install的时候出现GBK编码映射错误
+javadoc {
+    options {
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+        title 'ZY-Frame'   // 文档标题
+    }
+}
+artifacts {
+//    archives javadocJar
+    archives sourcesJar
+}
+
+// 生成jar包
+task releaseJar(type: Copy) {
+    from( 'build/intermediates/bundles/release')
+    into( '../jar')
+    include('classes.jar')
+    rename('classes.jar', 'okgo-' + version + '.jar')
+}
+// 这里是读取Bintray相关的信息，我们上传项目到github上的时候会把gradle文件传上去，
+// 所以不要把帐号密码的信息直接写在这里，写在local.properties中，这里动态读取。
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+
+    //读取 local.properties 文件里面的 bintray.user
+    user = properties.getProperty("bintray.user")
+
+    //读取 local.properties 文件里面的 bintray.apikey
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        userOrg = "rankian"        //发布到JCenter的组织，注意新版本的bintray是需要手动创建的
+        repo = "SanJie"              //发布到JCenter上的仓库名称，注意新版本的bintray是需要手动创建的
+        // 发布到Bintray上的项目名字
+        name = "ZY-Frame"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true  // 是否是公开项目
+    }
 }

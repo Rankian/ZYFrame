@@ -2,28 +2,151 @@
 <resources>
 
     <declare-styleable name="ZYLoadingView">
-        <attr name="loadingView" format="reference"/>
-        <attr name="errorView" format="reference"/>
-        <attr name="emptyView" format="reference"/>
-        <attr name="noNetworkView" format="reference"/>
+        <attr name="loadingView" format="reference" />
+        <attr name="errorView" format="reference" />
+        <attr name="emptyView" format="reference" />
+        <attr name="noNetworkView" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ArcHeader">
+        <attr name="arc_height" format="dimension" />
+        <attr name="arc_cropDirection" format="enum">
+            <enum name="cropInside" value="0" />
+            <enum name="cropOutside" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="BubbleView">
+        <attr name="arrowWidth" format="dimension" />
+        <attr name="angle" format="dimension" />
+        <attr name="arrowHeight" format="dimension" />
+        <attr name="arrowPosition" format="dimension" />
+        <attr name="bubbleColor" format="color" />
+        <attr name="arrowLocation" format="enum">
+            <enum name="left" value="0x00" />
+            <enum name="right" value="0x01" />
+            <enum name="top" value="0x02" />
+            <enum name="bottom" value="0x03" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="Snack">
+        <attr name="snackIcon" format="reference" />
+        <attr name="snackBackgroundColor" format="color" />
+        <attr name="snackTitle" format="string" />
+        <attr name="snackText" format="string" />
+    </declare-styleable>
+    <declare-styleable name="ZYBanner">
+        <attr name="delay_time" format="integer" />
+        <attr name="scroll_time" format="integer" />
+        <attr name="is_auto_play" format="boolean" />
+        <attr name="title_background" format="color|reference" />
+        <attr name="title_textcolor" format="color" />
+        <attr name="title_textsize" format="dimension" />
+        <attr name="title_height" format="dimension" />
+        <attr name="indicator_width" format="dimension" />
+        <attr name="indicator_height" format="dimension" />
+        <attr name="indicator_margin" format="dimension" />
+        <attr name="indicator_drawable_selected" format="reference" />
+        <attr name="indicator_drawable_unselected" format="reference" />
+        <attr name="image_scale_type" format="enum">
+            <enum name="center" value="0" />
+            <enum name="center_crop" value="1" />
+            <enum name="center_inside" value="2" />
+            <enum name="fit_center" value="3" />
+            <enum name="fit_end" value="4" />
+            <enum name="fit_start" value="5" />
+            <enum name="fit_xy" value="6" />
+            <enum name="matrix" value="7" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ZYCompoundIconTextView">
+        <attr name="cit_drawableLeft" format="integer" />
+        <attr name="cit_drawableTop" format="integer" />
+        <attr name="cit_drawableRight" format="integer" />
+        <attr name="cit_drawableBottom" format="integer" />
+        <attr name="cit_drawableStart" format="integer" />
+        <attr name="cit_drawableEnd" format="integer" />
+        <attr name="cit_iconWidth" format="dimension" />
+        <attr name="cit_iconHeight" format="dimension" />
+        <attr name="cit_iconColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="ZYDiagonalLayout">
+        <attr name="diagonal_angle" format="integer" />
+        <attr name="diagonal_handleMargins" format="boolean" />
+        <attr name="diagonal_position" format="enum">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="4" />
+            <enum name="top" value="8" />
+        </attr>
+        <attr name="diagonal_direction" format="enum">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ZYMarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference" />
+        <attr name="mvAnimDuration" format="integer|reference" />
+        <attr name="mvTextSize" format="dimension|reference" />
+        <attr name="mvTextColor" format="color|reference" />
+        <attr name="mvSingleLine" format="boolean" />
+        <attr name="mvGravity">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ZYPageIndicatorView">
+        <attr name="orientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="viewPager" format="reference" />
+        <attr name="select" format="integer" />
+        <attr name="count" format="integer" />
+        <attr name="dynamicCount" format="boolean" />
+        <attr name="radius" format="dimension" />
+        <attr name="padding" format="dimension" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="scaleFactor" format="float" />
+        <attr name="autoVisibility" format="boolean" />
+        <attr name="unselectedColor" format="color" />
+        <attr name="selectedColor" format="color" />
+        <attr name="interactiveAnimation" format="boolean" />
+        <attr name="animationDuration" format="integer" />
+        <attr name="animationType">
+            <enum name="none" value="0" />
+            <enum name="color" value="1" />
+            <enum name="scale" value="2" />
+            <enum name="worm" value="3" />
+            <enum name="slide" value="4" />
+            <enum name="fill" value="5" />
+            <enum name="thinWorm" value="6" />
+            <enum name="drop" value="7" />
+            <enum name="swap" value="8" />
+        </attr>
+        <attr name="mode">
+            <enum name="on" value="0" />
+            <enum name="off" value="1" />
+            <enum name="auto" value="2" />
+        </attr>
     </declare-styleable>
     <declare-styleable name="ZYRoundButton">
-        <!-- 背景色 -->
-        <attr name="btnSolidColor" format="color"/>
-        <!-- 边框色 -->
-        <attr name="btnStrokeColor" format="color"/>
-        <!-- 边框厚度 -->
-        <attr name="btnStrokeWidth" format="dimension"/>
-        <!-- 边框虚线长度 -->
-        <attr name="btnStrokeDashWidth" format="dimension"/>
-        <!-- 边框虚线间隙 -->
-        <attr name="btnStrokeDashGap" format="dimension"/>
-        <!-- 圆角半径，stadium 表示半径为 min(height,width) / 2-->
+        <attr name="btnSolidColor" format="color" />
+        <attr name="btnStrokeColor" format="color" />
+        <attr name="btnStrokeWidth" format="dimension" />
+        <attr name="btnStrokeDashWidth" format="dimension" />
+        <attr name="btnStrokeDashGap" format="dimension" />
         <attr name="btnCornerRadius" format="dimension">
-            <enum name="stadium" value="-1"/>
+            <enum name="stadium" value="-1" />
         </attr>
-        <!-- 自动计算按下(pressed)状态颜色的系数, 值为0时不自动计算 -->
-        <attr name="btnPressedRatio" format="float"/>
+        <attr name="btnPressedRatio" format="float" />
+    </declare-styleable>
+    <declare-styleable name="ZYSnackBar">
+        <attr name="snackStyle" format="reference" />
     </declare-styleable>
 
 </resources>
