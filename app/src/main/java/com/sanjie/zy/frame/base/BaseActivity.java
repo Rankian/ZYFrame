@@ -6,6 +6,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.IntRange;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
@@ -15,13 +16,14 @@ import com.sanjie.zy.frame.R;
 import com.sanjie.zy.utils.ZYKeyboardUtils;
 import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil;
 
+import butterknife.ButterKnife;
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackLayout;
 
 /**
  * Created by LangSanJie on 2017/3/9.
  */
 
-public abstract class BaseActivity extends ZYActivity implements BGASwipeBackLayout.PanelSlideListener{
+public abstract class BaseActivity extends AppCompatActivity implements BGASwipeBackLayout.PanelSlideListener{
 
     protected BGASwipeBackLayout swipeBackLayout;
 
@@ -31,15 +33,25 @@ public abstract class BaseActivity extends ZYActivity implements BGASwipeBackLay
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
+        if(getLayoutId() > 0){
+            setContentView(getLayoutId());
+        }
+        ButterKnife.bind(this);
+        if(hasToolbar()){
+            initAppToolBar();
+        }
+        initSwipeBackFinish();
+        initView();
+        initData(savedInstanceState);
+        processLogic();
     }
 
-    @Override
-    public void setContentView(@LayoutRes int layoutResID) {
-        super.setContentView(layoutResID);
-    }
+    public abstract int getLayoutId();
 
+    public abstract void initView();
+
+    public abstract void initData(Bundle savedInstanceState);
 
     /**
      * 获取标题

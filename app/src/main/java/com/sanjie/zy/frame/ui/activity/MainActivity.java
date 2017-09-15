@@ -9,20 +9,20 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.sanjie.zy.common.ZYActivityStack;
 import com.sanjie.zy.frame.R;
-import com.sanjie.zy.frame.application.App;
 import com.sanjie.zy.frame.base.BaseActivity;
 import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil;
 import com.sanjie.zy.widget.ZYToast;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by LangSanJie on 2017/3/9.
@@ -30,8 +30,6 @@ import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.right_Btn)
-    ImageView rightBtn;
     @BindView(R.id.contentFrame)
     FrameLayout contentFrame;
     @BindView(R.id.radioTab)
@@ -89,7 +87,7 @@ public class MainActivity extends BaseActivity {
          */
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull android.view.MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
                     case R.id.scanner_bluetooth:

@@ -1,14 +1,17 @@
 package com.sanjie.zy.frame.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.sanjie.zy.frame.R;
 import com.sanjie.zy.frame.base.BaseActivity;
+import com.sanjie.zy.http.reactive.MObserver;
 import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil;
 
 import java.util.Timer;
-import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 
 /**
  * Created by LangSanJie on 2017/3/9.
@@ -27,6 +30,7 @@ public class SplashActivity extends BaseActivity {
     protected void initAppToolBar() {
 
     }
+
     public String getToolBarTitle() {
         return null;
     }
@@ -46,19 +50,16 @@ public class SplashActivity extends BaseActivity {
     }
 
     protected void processLogic() {
-        TimerTask task = null;
-        task = new TimerTask() {
-            @Override
-            public void run() {
-//                forwardActivity(MainActivity.class, null);
-                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
-                finish();
-            }
-        };
-        timer = new Timer();
-        timer.schedule(task, 1000);
+        Observable.timer(2, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new MObserver<Long>() {
+                    @Override
+                    public void onNext(Long aLong) {
+                        super.onNext(aLong);
+                        forwardActivity(MainActivity.class, null);
+                        finish();
+                    }
+                });
     }
 
 }
