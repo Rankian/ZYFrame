@@ -67,6 +67,9 @@ dependencies {
     //GreenDao数据库
     implementation 'org.greenrobot:greendao:3.2.2'
     implementation 'org.greenrobot:greendao-generator:3.2.2'
-
+    implementation 'cn.bingoogolapple:bga-swipebacklayout:1.1.9@aar'
+    implementation 'com.android.support:recyclerview-v7:28.0.0-alpha3'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.android.support:design:28.0.0-alpha3'
     implementation project(':zy-frame')
 }

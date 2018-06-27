@@ -17,15 +17,15 @@ import com.sanjie.zy.utils.ZYKeyboardUtils;
 import com.sanjie.zy.utils.statusbar.ZYStatusBarUtil;
 
 import butterknife.ButterKnife;
-import cn.bingoogolapple.swipebacklayout.BGASwipeBackLayout;
+import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 
 /**
  * Created by LangSanJie on 2017/3/9.
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements BGASwipeBackLayout.PanelSlideListener{
+public abstract class BaseActivity extends AppCompatActivity implements BGASwipeBackHelper.Delegate{
 
-    protected BGASwipeBackLayout swipeBackLayout;
+    protected BGASwipeBackHelper swipeBackLayout;
 
     public Toolbar mToolbar;
     TextView tvTitleTextView;
@@ -105,9 +105,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
      */
     private void initSwipeBackFinish() {
         if (isSupportSwipeBack()) {
-            swipeBackLayout = new BGASwipeBackLayout(this);
-            swipeBackLayout.attachToActivity(this);
-            swipeBackLayout.setPanelSlideListener(this);
+            swipeBackLayout = new BGASwipeBackHelper(this, this);
 
             // 下面四项项可以不配置，这里只是为了讲述接口用法。
             // 如果需要启用微信滑动返回样式，必须在 Application 的 onCreate 方法中执行 BGASwipeBackManager.getInstance().init(this)
@@ -119,7 +117,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
             // 设置是否是微信滑动返回样式。默认值为 true
             swipeBackLayout.setIsWeChatStyle(true);
             // 设置阴影资源 id。默认值为 R.drawable.bga_swipebacklayout_shadow
-            swipeBackLayout.setShadowResId(R.drawable.bga_swipebacklayout_shadow);
+            swipeBackLayout.setShadowResId(R.drawable.bga_sbl_shadow);
             // 设置是否显示滑动返回的阴影效果。默认值为 true
             swipeBackLayout.setIsNeedShowShadow(true);
             // 设置阴影区域的透明度是否根据滑动的距离渐变。默认值为 true
@@ -132,8 +130,26 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
      *
      * @return
      */
-    protected boolean isSupportSwipeBack() {
-        return true;
+
+    @Override
+    public boolean isSupportSwipeBack() {
+        return false;
+    }
+
+
+    @Override
+    public void onSwipeBackLayoutSlide(float slideOffset) {
+
+    }
+
+    @Override
+    public void onSwipeBackLayoutCancel() {
+
+    }
+
+    @Override
+    public void onSwipeBackLayoutExecuted() {
+
     }
 
     /**
@@ -147,20 +163,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
         }
     }
 
-    @Override
-    public void onPanelSlide(View panel, float slideOffset) {
-
-    }
-
-    @Override
-    public void onPanelOpened(View panel) {
-        swipeBackward();
-    }
-
-    @Override
-    public void onPanelClosed(View panel) {
-
-    }
 
     @Override
     public void onBackPressed() {
