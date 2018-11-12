@@ -1063,7 +1063,7 @@ public class ZYPageIndicatorView extends View implements ViewPager.OnPageChangeL
         int animIndex = typedArray.getInt(R.styleable.ZYPageIndicatorView_animationType, AnimationType.NONE.ordinal());
         animationType = getAnimationType(animIndex);
 
-        int index = typedArray.getInt(R.styleable.ZYPageIndicatorView_mode, Mode.OFF.ordinal());
+        int index = typedArray.getInt(R.styleable.ZYPageIndicatorView_viewMode, Mode.OFF.ordinal());
         mode = getMode(index);
     }
 

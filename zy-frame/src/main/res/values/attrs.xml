@@ -128,7 +128,7 @@
             <enum name="drop" value="7" />
             <enum name="swap" value="8" />
         </attr>
-        <attr name="mode">
+        <attr name="viewMode">
             <enum name="on" value="0" />
             <enum name="off" value="1" />
             <enum name="auto" value="2" />
