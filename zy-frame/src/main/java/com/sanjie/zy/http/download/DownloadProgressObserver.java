@@ -2,12 +2,12 @@ package com.sanjie.zy.http.download;
 
 import com.sanjie.zy.http.listener.HttpProgressOnNextListener;
 import com.sanjie.zy.http.reactive.MObserver;
+import com.sanjie.zy.rx.android.schedulers.AndroidSchedulers;
 
 import java.lang.ref.WeakReference;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 

@@ -1,7 +1,6 @@
 package com.sanjie.zy.picture.ui.adapter;
 
 import android.support.v7.widget.AppCompatCheckBox;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,8 @@ import com.sanjie.zy.widget.ZYToast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by LangSanJie on 2017/4/25.

@@ -19,7 +19,6 @@ package com.sanjie.zy.adpter.decoration;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -28,6 +27,8 @@ import com.sanjie.zy.adpter.ZYRecyclerViewAdapter;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * A sticky header decoration for android's RecyclerView.

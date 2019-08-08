@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
-import android.support.v7.widget.RecyclerView;
 import android.text.util.Linkify;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -22,6 +21,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.sanjie.zy.ZYFrame;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by LangSanJie on 2017/3/7.

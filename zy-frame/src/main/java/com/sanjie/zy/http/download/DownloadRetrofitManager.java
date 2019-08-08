@@ -4,6 +4,7 @@ import com.sanjie.zy.http.converter.JsonConverterFactory;
 import com.sanjie.zy.http.exception.HttpTimeException;
 import com.sanjie.zy.http.exception.RetryWhenNetworkException;
 import com.sanjie.zy.http.service.DownloadService;
+import com.sanjie.zy.rx.android.schedulers.AndroidSchedulers;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,8 +16,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;

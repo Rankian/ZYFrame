@@ -10,8 +10,6 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
@@ -42,6 +40,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -76,11 +76,13 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
         return new ZYPickerFragment();
     }
 
-    @Override protected int getLayoutId() {
+    @Override
+    protected int getLayoutId() {
         return R.layout.fragment_picker;
     }
 
-    @Override protected void initView(View view) {
+    @Override
+    protected void initView(View view) {
         config = ZYPicturePickerManager.getInstance().getConfig();
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         title = (TextView) view.findViewById(R.id.title);
@@ -102,7 +104,8 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
         appCompatActivity.setSupportActionBar(toolbar);
         appCompatActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
                 appCompatActivity.onBackPressed();
             }
         });
@@ -124,7 +127,8 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
 
         imageItemsubscribe =
                 RxBus.singleton().toObservable(ImageItem.class).subscribe(new Consumer<ImageItem>() {
-                    @Override public void accept(@io.reactivex.annotations.NonNull ImageItem imageItem)
+                    @Override
+                    public void accept(@io.reactivex.annotations.NonNull ImageItem imageItem)
                             throws Exception {
                         ArrayList<ImageItem> data = new ArrayList<>();
                         data.add(imageItem);
@@ -147,14 +151,14 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
         popWindowManager.init(title, data);
     }
 
-    private void initImageFolderDialog(final List<ImageFolder> data){
+    private void initImageFolderDialog(final List<ImageFolder> data) {
         final List<MenuItem> menuItems = new ArrayList<>();
 
         Observable.fromIterable(data)
                 .subscribe(new Consumer<ImageFolder>() {
                     @Override
                     public void accept(@io.reactivex.annotations.NonNull ImageFolder imageFolder) throws Exception {
-                        menuItems.add(new MenuItem(imageFolder.getImages().get(0).getPath(),imageFolder.getName()));
+                        menuItems.add(new MenuItem(imageFolder.getImages().get(0).getPath(), imageFolder.getName()));
                     }
                 });
 
@@ -182,14 +186,16 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
         recyclerView.addItemDecoration(decoration);
         recyclerView.setAdapter(adapter);
         adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
-            @Override public void onItemRangeChanged(int positionStart, int itemCount) {
+            @Override
+            public void onItemRangeChanged(int positionStart, int itemCount) {
                 int maxValue = ZYPicturePickerManager.getInstance().getConfig().getMaxValue();
                 tvSelectOk.setText("确定 (" + adapter.getCheckImage().size() + "/" + maxValue + ") ");
             }
         });
     }
 
-    @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //take camera
         if (resultCode == Activity.RESULT_OK && requestCode == CAMERA_REQUEST) {
@@ -218,7 +224,8 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
         getActivity().finish();
     }
 
-    @Override public void showAllImage(List<ImageFolder> datas) {
+    @Override
+    public void showAllImage(List<ImageFolder> datas) {
         allFolder = datas;
         adapter.setData(datas.get(0).getImages());
         adapter.notifyDataSetChanged();
@@ -226,7 +233,8 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
 //        initImageFolderDialog(datas);
     }
 
-    @Override public void onDestroy() {
+    @Override
+    public void onDestroy() {
         super.onDestroy();
 
         if (!folderClicksubscribe.isDisposed()) {
@@ -238,7 +246,8 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
         }
     }
 
-    @Override public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
         if (tvSelectOk == v) {
             ArrayList<ImageItem> checkImage = adapter.getCheckImage();
             handleResult(checkImage);
@@ -252,18 +261,20 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
         }
     }
 
-    @TargetApi(23) private void requestPermission() {
+    @TargetApi(23)
+    private void requestPermission() {
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[] { Manifest.permission.CAMERA }, CAMERA_PERMISSION);
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION);
         } else {
             takePictures();
         }
 
     }
 
-    @Override public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                                     @NonNull int[] grantResults) {
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == CAMERA_PERMISSION) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -280,7 +291,8 @@ public class ZYPickerFragment extends AbstractFragment<ZYPickerFragmentPresenter
 
     private class CameraClickListener implements View.OnClickListener {
 
-        @Override public void onClick(View v) {
+        @Override
+        public void onClick(View v) {
             if (Build.VERSION.SDK_INT >= 23) {
                 requestPermission();
             } else {

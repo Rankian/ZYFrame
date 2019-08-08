@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.sanjie.zy.R;
 import com.sanjie.zy.picture.bean.ImageFolder;
 import com.sanjie.zy.picture.bean.ImageItem;
-import com.sanjie.zy.widget.ZYToast;
+import com.sanjie.zy.rx.android.schedulers.AndroidSchedulers;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +19,6 @@ import java.util.Map;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;

@@ -11,7 +11,6 @@ import com.sanjie.zy.R;
 import com.sanjie.zy.base.ZYActivity;
 import com.sanjie.zy.picture.ui.fragment.ZYPickerFragment;
 import com.sanjie.zy.widget.ZYToast;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 
 /**
  * Created by LangSanJie on 2017/4/25.

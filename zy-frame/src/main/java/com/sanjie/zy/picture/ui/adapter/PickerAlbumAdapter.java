@@ -1,7 +1,6 @@
 package com.sanjie.zy.picture.ui.adapter;
 
 import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -14,6 +13,8 @@ import com.sanjie.zy.picture.bean.ImageFolder;
 import com.sanjie.zy.utils.RxBus;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by LangSanJie on 2017/4/25.

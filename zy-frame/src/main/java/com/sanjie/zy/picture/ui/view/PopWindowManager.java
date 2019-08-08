@@ -1,8 +1,6 @@
 package com.sanjie.zy.picture.ui.view;
 
 import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +13,9 @@ import com.sanjie.zy.picture.ui.adapter.PickerAlbumAdapter;
 import com.sanjie.zy.utils.ZYDisplayUtils;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by LangSanJie on 2017/4/25.
